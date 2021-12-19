@@ -13,6 +13,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home', function () {
+   
+    return view('home');
+})->name("firstpage");
+
+Route::get("/pagellll",function(){
+    return view("nome-pagina");
+})->name("prova");
+
+
+Route::get("/pagina2",function(){
+    return view("pagina2");
+})->name("paginaprova2");
+
+
+Route::get("/pagina3", function(){
+    $data = [
+        'titolo'=>'lista regali',
+       
+        'lista_regali'=>[
+            'telefono',
+            'spumante',
+            'candele',
+            'pupazzo'
+        ]
+        ];
+    return view("pagina3",$data);
+
+})->name("paginaprova3");
+
+
+
+Route::get("/pagina4", function(){
+    return view("pagina4");
+
+})->name("paginaprova4");
